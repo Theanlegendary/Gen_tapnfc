@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "Bio Cloud Native",
+    "slug": "bio-cloud-native",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "biocloud",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.biocloud.nativeapp",
+      "usesAppleSignIn": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs camera access to scan QR codes.",
+        "NFCReaderUsageDescription": "This app uses NFC to encode and verify customer NFC cards."
+      }
+    },
+    "android": {
+      "package": "com.biocloud.nativeapp",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.NFC"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-image-picker",
+      "expo-web-browser",
+      "expo-apple-authentication",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Bio Cloud to access your camera to scan card QR codes.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      "react-native-nfc-manager"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "792fa251-8479-4cf7-909a-0e2800c6303d"
+      }
+    },
+    "owner": "vct8888"
+  }
+}

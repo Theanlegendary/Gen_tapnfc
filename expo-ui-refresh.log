@@ -1,0 +1,193 @@
+env: load .env
+env: export EXPO_PUBLIC_FIREBASE_API_KEY EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN EXPO_PUBLIC_FIREBASE_PROJECT_ID EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID EXPO_PUBLIC_FIREBASE_APP_ID EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID
+Starting project at C:\Users\DELL\Downloads\sitehub-main\sitehub-main
+Starting Metro Bundler
+Waiting on http://localhost:8087
+Logs for your project will appear below.
+Web node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓░░░░░░ 64.1% (603/753)
+Web Bundled 3651ms node_modules\expo-router\entry.js (2496 modules)
+ LOG  [web] Logs will appear in the browser console
+Web Bundled 21ms node_modules\expo-apple-authentication\build\index.js (1 module)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 269ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-apple-authentication\build\index.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 4ms node_modules\expo-apple-authentication\build\index.js (1 module)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 115ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-apple-authentication\build\index.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 4ms node_modules\expo-apple-authentication\build\index.js (1 module)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 313ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-apple-authentication\build\index.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 43ms node_modules\expo-apple-authentication\build\index.js (1 module)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 86ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-apple-authentication\build\index.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 4ms node_modules\expo-apple-authentication\build\index.js (1 module)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 180ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 704ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-apple-authentication\build\index.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 7ms node_modules\expo-apple-authentication\build\index.js (1 module)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 336ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Unable to resolve "@/src/features/printer/screens/PrinterScanScreen" from "app\printer\scan.tsx"
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mexport[39m { [36mdefault[39m } [36mfrom[39m [32m'@/src/features/printer/screens/PrinterScanScreen'[39m[33m;[39m
+ [90m   |[39m                          [31m[1m^[22m[39m
+ [90m 2 |[39m[0m
+
+Import stack:
+
+ app\printer\scan.tsx
+ | import "@/src/features/printer/screens/PrinterScanScreen"
+
+ app (require.context)
+
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 109ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 90ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 409ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 88ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-apple-authentication\build\index.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 43ms node_modules\expo-apple-authentication\build\index.js (1 module)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 144ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+ ERROR  SyntaxError: C:\Users\DELL\Downloads\sitehub-main\sitehub-main\src\features\orders\NewOrderScreen2.tsx: Unexpected token (53:0)
+
+  51 |   { label: 'Bank', value: 'online', icon: 'MapPin' },
+  52 |   { label: 'Card', value: 'deposit', icon: 'CreditCard' },
+> 53 | };
+     | ^
+  54 |
+  55 | type ArtworkAsset = {
+  56 |   uri: string;
+    at constructor (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:6616:19)
+    at TypeScriptParserMixin.unexpected (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:6636:16)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11459:22)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10848:21)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9803:20)
+    at C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12443:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10817:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12510:17)
+    at TypeScriptParserMixin.parseExprListItem (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12192:18)
+    at TypeScriptParserMixin.parseExprList (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12167:22)
+    at TypeScriptParserMixin.parseArrayLike (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12074:26)
+    at TypeScriptParserMixin.parseArrayLike (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9210:24)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11352:23)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10848:21)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9803:20)
+    at C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12438:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10817:17)
+    at TypeScriptParserMixin.parseVar (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:13401:91)
+    at TypeScriptParserMixin.parseVarStatement (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:13247:10)
+    at TypeScriptParserMixin.parseVarStatement (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9425:31)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12868:23)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9525:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12784:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12761:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:13333:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:13326:10)
+    at TypeScriptParserMixin.parseProgram (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12639:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12629:25)
+    at TypeScriptParserMixin.parse (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:14505:25)
+    at TypeScriptParserMixin.parse (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10143:18)
+    at parse (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:14518:26)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundling failed 40ms node_modules\expo-router\entry.js (1 module)
+ ERROR  SyntaxError: C:\Users\DELL\Downloads\sitehub-main\sitehub-main\src\features\orders\NewOrderScreen2.tsx: Unexpected token (53:0)
+
+  51 |   { label: 'Bank', value: 'online', icon: 'MapPin' },
+  52 |   { label: 'Card', value: 'deposit', icon: 'CreditCard' },
+> 53 | };
+     | ^
+  54 |
+  55 | type ArtworkAsset = {
+  56 |   uri: string;
+    at constructor (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:6616:19)
+    at TypeScriptParserMixin.unexpected (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:6636:16)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11459:22)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10848:21)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9803:20)
+    at C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12443:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10817:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12510:17)
+    at TypeScriptParserMixin.parseExprListItem (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12192:18)
+    at TypeScriptParserMixin.parseExprList (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12167:22)
+    at TypeScriptParserMixin.parseArrayLike (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12074:26)
+    at TypeScriptParserMixin.parseArrayLike (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9210:24)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11352:23)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10848:21)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9803:20)
+    at C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12438:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10817:17)
+    at TypeScriptParserMixin.parseVar (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:13401:91)
+    at TypeScriptParserMixin.parseVarStatement (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:13247:10)
+    at TypeScriptParserMixin.parseVarStatement (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9425:31)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12868:23)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:9525:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12784:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12761:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:13333:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:13326:10)
+    at TypeScriptParserMixin.parseProgram (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12639:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:12629:25)
+    at TypeScriptParserMixin.parse (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:14505:25)
+    at TypeScriptParserMixin.parse (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:10143:18)
+    at parse (C:\Users\DELL\Downloads\sitehub-main\sitehub-main\node_modules\@babel\parser\lib\index.js:14518:26)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 419ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console

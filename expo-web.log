@@ -1,0 +1,784 @@
+env: load .env
+env: export EXPO_PUBLIC_FIREBASE_API_KEY EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN EXPO_PUBLIC_FIREBASE_PROJECT_ID EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID EXPO_PUBLIC_FIREBASE_APP_ID
+Starting project at C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner
+Starting Metro Bundler
+The following packages should be updated for best compatibility with the installed expo version:
+  @react-native-async-storage/async-storage@2.2.0 - expected version: 2.1.2
+  expo@53.0.0 - expected version: ~53.0.27
+  expo-constants@17.1.3 - expected version: ~17.1.8
+  expo-font@13.2.2 - expected version: ~13.3.2
+  expo-haptics@14.1.3 - expected version: ~14.1.4
+  expo-linear-gradient@14.1.3 - expected version: ~14.1.5
+  expo-linking@7.1.3 - expected version: ~7.1.7
+  expo-router@5.0.2 - expected version: ~5.1.11
+  expo-splash-screen@0.30.6 - expected version: ~0.30.10
+  expo-status-bar@2.2.2 - expected version: ~2.2.3
+  expo-symbols@0.4.3 - expected version: ~0.4.5
+  expo-system-ui@5.0.5 - expected version: ~5.0.11
+  expo-web-browser@14.1.5 - expected version: ~14.2.0
+  react-native@0.79.1 - expected version: 0.79.6
+  react-native-safe-area-context@5.3.0 - expected version: 5.4.0
+  react-native-screens@4.10.0 - expected version: ~4.11.1
+Your project may not work correctly until you install the expected versions of the packages.
+Waiting on http://localhost:8082
+Logs for your project will appear below.
+Web node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 53.8% ( 541/2227)
+λ node_modules\expo-router\node\render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 90.8% (2233/2343)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules\expo-router\node\render.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 3835ms node_modules\expo-router\entry.js (2352 modules)
+Web Bundled 3782ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 3930ms node_modules\expo-router\node\render.js (2660 modules)
+λ Bundled 3913ms node_modules\expo-router\node\render.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Error: Premature close
+    at onclose (node:internal/streams/end-of-stream:158:30)
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at processImmediate (node:internal/timers:459:9)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 1152ms node_modules\expo-router\entry.js (2482 modules)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 101ms node_modules\expo-router\node\render.js (1 module)
+λ Bundled 55ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 1064ms node_modules\expo-router\entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Web Bundled 1410ms node_modules\expo-router\entry.js (1 module)
+Error: Premature close
+    at onclose (node:internal/streams/end-of-stream:158:30)
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+Web Bundled 96ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+λ Bundled 69ms node_modules\expo-router\node\render.js (1 module)
+λ Bundled 53ms node_modules\expo-router\node\render.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Web Bundled 1121ms node_modules\expo-router\entry.js (1 module)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 1021ms node_modules\expo-router\entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Error: Premature close
+    at onclose (node:internal/streams/end-of-stream:158:30)
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+Web Bundled 83ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 300ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 454ms node_modules\expo-router\node\render.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Web Bundled 120ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 190ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 276ms node_modules\expo-router\node\render.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Web Bundled 94ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+λ Bundled 83ms node_modules\expo-router\node\render.js (1 module)
+λ Bundled 50ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 951ms node_modules\expo-router\entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Web Bundled 1083ms node_modules\expo-router\entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Error: Premature close
+    at onclose (node:internal/streams/end-of-stream:158:30)
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at processImmediate (node:internal/timers:459:9)
+Web Bundled 193ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 78ms node_modules\expo-router\node\render.js (1 module)
+λ Bundled 53ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 978ms node_modules\expo-router\entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Web Bundled 1113ms node_modules\expo-router\entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Error: Premature close
+    at onclose (node:internal/streams/end-of-stream:158:30)
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at processImmediate (node:internal/timers:459:9)
+Web Bundled 111ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+λ Bundled 93ms node_modules\expo-router\node\render.js (1 module)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 624ms node_modules\expo-router\entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Web Bundled 116ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 79ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 596ms node_modules\expo-router\entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:227:27)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  Component (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.callComponentInDEV [as react-stack-bottom-frame] (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:8524:18)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4524:19)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5296:39)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5613:22)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 230ms node_modules\expo-router\node\render.js (1 module)
+λ Bundled 160ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 1335ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 1232ms node_modules\expo-router\entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:269:15)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  <unknown> (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.getComponentNameFromType (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server.node.development.js:19:5)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4688:22)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5404:5)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5771:13)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:136:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\views\Sitemap.js:144:42)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:184:12)
+λ  WARN  "textShadow*" style props are deprecated. Use "textShadow". 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  warnOnce (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\modules\warnOnce\index.js:24:13)
+  preprocess (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\preprocess.js:145:13)
+  compileAndInsertAtomic (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:56:34)
+  forEach (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:99:26)
+  Function.create (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-native-web\dist\exports\StyleSheet\index.js:87:23)
+  factory (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\auth\login.tsx:269:15)
+  loadModuleImplementation (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:277:5)
+  guardedLoadModule (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\metro-runtime\src\polyfills\require.js:177:21)
+λ  WARN  [Layout children]: No route named "admin" exists in nested children: [
+  '+not-found',        'index',
+  'nfc-encode',        'notifications',
+  'privacy-policy',    'qr-scanner',
+  'summary',           'terms-of-service',
+  'test-notification', '_sitemap',
+  '(printer)',         '(sales)',
+  '(tabs)',            'admin/groups',
+  'admin/index',       'admin/join-requests',
+  'admin/qr-codes',    'admin/reports',
+  'admin/users',       'auth/login',
+  'auth/register'
+] 
+  console.warn (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:152:21)
+  map (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:36:21)
+  getSortedChildren (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:29:10)
+  useSortedScreens (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\useScreens.js:85:11)
+  <unknown> (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\expo-router\build\layouts\withLayoutContext.js:128:57)
+  Object.getComponentNameFromType (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server.node.development.js:19:5)
+  renderWithHooks (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:4688:22)
+  renderElement (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5404:5)
+  retryNode (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\react-dom\cjs\react-dom-server-legacy.node.development.js:5771:13)
+Error: Premature close
+    at onclose (node:internal/streams/end-of-stream:158:30)
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+Web Bundled 86ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console

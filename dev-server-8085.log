@@ -1,0 +1,210 @@
+env: load .env
+env: export EXPO_PUBLIC_FIREBASE_API_KEY EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN EXPO_PUBLIC_FIREBASE_PROJECT_ID EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID EXPO_PUBLIC_FIREBASE_APP_ID EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID
+Starting project at C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner
+Starting Metro Bundler
+Waiting on http://localhost:8085
+Logs for your project will appear below.
+Web node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 81.9% ( 808/2452)
+Web Bundled 3656ms node_modules\expo-router\entry.js (2629 modules)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 138ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 113ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Unable to resolve "./typography" from "design-system\index.ts"
+[0m [90m 1 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./tokens'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./typography'[39m[33m;[39m
+ [90m   |[39m                [31m[1m^[22m[39m
+ [90m 3 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./Icon'[39m[33m;[39m
+ [90m 4 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./components/AppButton'[39m[33m;[39m
+ [90m 5 |[39m [36mexport[39m [33m*[39m [36mfrom[39m [32m'./components/AppInput'[39m[33m;[39m[0m
+
+Import stack:
+
+ design-system\index.ts
+ | import "./typography"
+
+ app\nfc-encode.tsx
+ | import "@/design-system"
+
+ app (require.context)
+
+ ERROR  SyntaxError: C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\components\QRCodePreview.tsx: Unexpected token (3:88)
+
+  1 | import React from 'react';
+  2 | import { AppText } from '@/src/components/AppText';
+> 3 | import { View, StyleSheet, Modal, TouchableOpacity, ScrollView, Alert, Platform } from  View, Text, StyleSheet, Modal, TouchableOpacity, ScrollView, Alert, Platform ;
+    |                                                                                         ^
+  4 | import { AppIcon } from '@/src/components/AppIcon';
+  5 | import { AppText } from '@/src/components/AppText';
+  6 | import QRCode from 'react-native-qrcode-svg';
+    at constructor (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:6616:19)
+    at TypeScriptParserMixin.unexpected (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:6636:16)
+    at TypeScriptParserMixin.parseImportSource (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14275:32)
+    at TypeScriptParserMixin.parseImportSourceAndAttributes (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14266:24)
+    at TypeScriptParserMixin.parseImportSpecifiersAndAfter (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14261:17)
+    at TypeScriptParserMixin.parseImport (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14252:17)
+    at TypeScriptParserMixin.parseImport (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:9370:26)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12893:27)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:9525:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12784:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12761:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:13333:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:13326:10)
+    at TypeScriptParserMixin.parseProgram (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12639:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12629:25)
+    at TypeScriptParserMixin.parse (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14505:25)
+    at TypeScriptParserMixin.parse (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:10143:18)
+    at parse (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14518:26)
+    at parser (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at evaluateSync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\gensync\index.js:251:28)
+    at sync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\gensync\index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\errors\rewrite-stack-trace.js:47:12)
+    at Object.transformSync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transform.js:42:76)
+    at parseWithBabel (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transformSync.js:75:18)
+    at transformSync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transformSync.js:54:16)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\babel-transformer.js:127:58)
+    at transformJSWithBabel (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:468:47)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:583:12)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transform-worker\transform-worker.js:178:19)
+    at transformFile (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro\node_modules\metro\src\DeltaBundler\Worker.flow.js:67:36)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro\node_modules\metro\src\DeltaBundler\Worker.flow.js:42:10)
+    at execFunction (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:149:17)
+    at execHelper (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:137:5)
+    at execMethod (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:140:5)
+    at process.messageListener (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:44:7)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:949:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:91:21)
+ ERROR  SyntaxError: C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\summary.tsx: Unexpected token (4:2)
+
+  2 | import { AppText } from '@/src/components/AppText';
+  3 | import { View, StyleSheet, TouchableOpacity, ScrollView, TextInput } from  
+> 4 |   View, 
+    |   ^
+  5 |   Text, 
+  6 |   StyleSheet, 
+  7 |   TouchableOpacity, 
+    at constructor (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:6616:19)
+    at TypeScriptParserMixin.unexpected (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:6636:16)
+    at TypeScriptParserMixin.parseImportSource (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14275:32)
+    at TypeScriptParserMixin.parseImportSourceAndAttributes (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14266:24)
+    at TypeScriptParserMixin.parseImportSpecifiersAndAfter (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14261:17)
+    at TypeScriptParserMixin.parseImport (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14252:17)
+    at TypeScriptParserMixin.parseImport (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:9370:26)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12893:27)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:9525:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12784:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12761:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:13333:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:13326:10)
+    at TypeScriptParserMixin.parseProgram (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12639:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12629:25)
+    at TypeScriptParserMixin.parse (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14505:25)
+    at TypeScriptParserMixin.parse (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:10143:18)
+    at parse (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14518:26)
+    at parser (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at evaluateSync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\gensync\index.js:251:28)
+    at sync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\gensync\index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\errors\rewrite-stack-trace.js:47:12)
+    at Object.transformSync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transform.js:42:76)
+    at parseWithBabel (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transformSync.js:75:18)
+    at transformSync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transformSync.js:54:16)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\babel-transformer.js:127:58)
+    at transformJSWithBabel (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:468:47)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:583:12)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transform-worker\transform-worker.js:178:19)
+    at transformFile (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro\node_modules\metro\src\DeltaBundler\Worker.flow.js:67:36)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro\node_modules\metro\src\DeltaBundler\Worker.flow.js:42:10)
+    at execFunction (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:149:17)
+    at execHelper (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:137:5)
+    at execMethod (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:140:5)
+    at process.messageListener (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:44:7)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:949:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:91:21)
+ ERROR  SyntaxError: C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\app\admin\join-requests.tsx: Unexpected token (4:2)
+
+  2 | import { AppText } from '@/src/components/AppText';
+  3 | import { View, StyleSheet, TouchableOpacity, ScrollView, Alert, RefreshControl } from 
+> 4 |   View,
+    |   ^
+  5 |   Text,
+  6 |   StyleSheet,
+  7 |   TouchableOpacity,
+    at constructor (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:6616:19)
+    at TypeScriptParserMixin.unexpected (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:6636:16)
+    at TypeScriptParserMixin.parseImportSource (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14275:32)
+    at TypeScriptParserMixin.parseImportSourceAndAttributes (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14266:24)
+    at TypeScriptParserMixin.parseImportSpecifiersAndAfter (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14261:17)
+    at TypeScriptParserMixin.parseImport (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14252:17)
+    at TypeScriptParserMixin.parseImport (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:9370:26)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12893:27)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:9525:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12784:17)
+    at TypeScriptParserMixin.parseModuleItem (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12761:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:13333:36)
+    at TypeScriptParserMixin.parseBlockBody (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:13326:10)
+    at TypeScriptParserMixin.parseProgram (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12639:10)
+    at TypeScriptParserMixin.parseTopLevel (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:12629:25)
+    at TypeScriptParserMixin.parse (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14505:25)
+    at TypeScriptParserMixin.parse (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:10143:18)
+    at parse (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\parser\lib\index.js:14518:26)
+    at parser (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at evaluateSync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\gensync\index.js:251:28)
+    at sync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\gensync\index.js:89:14)
+    at stopHiding - secret - don't use this - v1 (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\errors\rewrite-stack-trace.js:47:12)
+    at Object.transformSync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@babel\core\lib\transform.js:42:76)
+    at parseWithBabel (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transformSync.js:75:18)
+    at transformSync (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transformSync.js:54:16)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\babel-transformer.js:127:58)
+    at transformJSWithBabel (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:468:47)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transform-worker\metro-transform-worker.js:583:12)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro-config\build\transform-worker\transform-worker.js:178:19)
+    at transformFile (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro\node_modules\metro\src\DeltaBundler\Worker.flow.js:67:36)
+    at Object.transform (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\@expo\metro\node_modules\metro\src\DeltaBundler\Worker.flow.js:42:10)
+    at execFunction (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:149:17)
+    at execHelper (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:137:5)
+    at execMethod (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:140:5)
+    at process.messageListener (C:\Users\Thean-Legendary\Desktop\Edit\Qrscanner\qrscanner\node_modules\jest-worker\build\workers\processChild.js:44:7)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:949:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:91:21)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 111ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 106ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 135ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 171ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
