@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "npx expo start",
+    "start:tunnel": "npx expo start --tunnel",
     "dev": "npx expo start",
     "android": "npx expo start --android",
     "ios": "npx expo start --ios",
