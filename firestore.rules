@@ -73,6 +73,17 @@ service cloud.firestore {
         || request.resource.data.cardStatus in ['active', 'frozen', 'closed'];
     }
 
+    function isAssignedSalesRep(salesId) {
+      return exists(/databases/$(database)/documents/users/$(salesId))
+        && get(/databases/$(database)/documents/users/$(salesId)).data.role
+          in ['sales', 'sales_rep', 'agent', 'sales_agent'];
+    }
+
+    match /app_config/{docId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
     match /users/{userId} {
       allow read: if isSignedIn() && (request.auth.uid == userId || isAdmin());
       allow create: if isSignedIn() && (
@@ -104,9 +115,10 @@ service cloud.firestore {
           && request.resource.data.assignedSalesman == request.auth.uid)
         || (isCustomer()
           && request.resource.data.createdBy == request.auth.uid
-          && request.resource.data.assignedSalesman == request.auth.uid
+          && request.resource.data.assignedSalesman != request.auth.uid
+          && isAssignedSalesRep(request.resource.data.assignedSalesman)
           && request.resource.data.status in ['new', 'design', 'ready']
-          && request.resource.data.paymentStatus == 'unpaid'
+          && request.resource.data.paymentStatus in ['unpaid', 'paid']
           && request.resource.data.quantity is int
           && request.resource.data.quantity >= 1
           && request.resource.data.quantity <= 100)

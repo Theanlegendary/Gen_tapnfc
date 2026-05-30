@@ -56,6 +56,9 @@ const STAFF = [
   { email: 'sales2@demo.com',   password: 'demo1234', displayName: 'Chan Thea',       role: 'sales',   branch: 'Siem Reap',     phone: '+855 17 234 567' },
   { email: 'printer@demo.com',  password: 'demo1234', displayName: 'Demo Printer',    role: 'printer', branch: 'Workshop A',    phone: '+855 11 111 111' },
   { email: 'printer2@demo.com', password: 'demo1234', displayName: 'Workshop Sothea', role: 'printer', branch: 'Workshop B',    phone: '+855 99 876 543' },
+  { email: 'qa@demo.com',       password: 'demo1234', displayName: 'Demo QA',         role: 'qa_inspector', branch: 'Workshop A', phone: '+855 22 222 222' },
+  { email: 'shipping@demo.com', password: 'demo1234', displayName: 'Demo Shipping',   role: 'shipping', branch: 'Workshop A',    phone: '+855 33 333 333' },
+  { email: 'customer@demo.com', password: 'demo1234', displayName: 'Demo Customer',   role: 'customer', branch: '',              phone: '+855 44 444 444' },
   { email: 'admin@demo.com',    password: 'demo1234', displayName: 'Manager Demo',    role: 'admin',   branch: 'Head Office',   phone: '+855 23 456 789' },
   { email: 'super@demo.com',    password: 'demo1234', displayName: 'Super Admin',     role: 'super_admin', branch: 'Head Office', phone: '+855 23 000 001' },
   { email: 'empty@demo.com',    password: 'demo1234', displayName: 'Empty Tester',    role: 'sales',   branch: 'Test Branch',   phone: '+855 00 000 000' },
@@ -119,6 +122,13 @@ async function seedDemoData() {
   console.log(`\n   sales@demo.com    → ${salesmanId}`);
   console.log(`   sales2@demo.com   → ${salesman2Id}`);
   console.log(`   printer@demo.com  → ${printerId}`);
+
+  await setDoc(doc(db, 'app_config', 'ops'), {
+    defaultSalesUid: salesmanId,
+    defaultSalesEmail: 'sales@demo.com',
+    updatedAt: Timestamp.now(),
+  });
+  console.log(`\n⚙️  app_config/ops → defaultSalesUid: ${salesmanId}`);
 
   // 2. Sign in as admin to write orders/jobs (bypasses rules)
   await signInWithEmailAndPassword(auth, 'admin@demo.com', 'demo1234');
@@ -217,6 +227,9 @@ async function seedDemoData() {
   console.log(`  sales2@demo.com   → UID: ${salesman2Id}`);
   console.log(`  printer@demo.com  → UID: ${printerId}`);
   console.log(`  printer2@demo.com → UID: ${printer2Id}`);
+  console.log(`  qa@demo.com       → UID: ${uids['qa@demo.com']}`);
+  console.log(`  shipping@demo.com → UID: ${uids['shipping@demo.com']}`);
+  console.log(`  customer@demo.com → UID: ${uids['customer@demo.com']}`);
   console.log(`  admin@demo.com    → UID: ${uids['admin@demo.com']}`);
 }
 

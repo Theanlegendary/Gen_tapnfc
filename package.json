@@ -13,7 +13,13 @@
     "eas:build:preview": "npx eas build --platform all --profile preview",
     "eas:build:production": "npx eas build --platform all --profile production",
     "eas:build:ios:testflight": "npx eas build --platform ios --profile production",
-    "eas:submit:ios:testflight": "npx eas submit --platform ios --profile production --latest"
+    "eas:submit:ios:testflight": "npx eas submit --platform ios --profile production --latest",
+    "test:crud": "node scripts/crud-smoke-test.mjs",
+    "test:launch": "node scripts/launch-verification.mjs",
+    "verify:launch": "node scripts/launch-verification.mjs",
+    "deploy:rules": "node scripts/deploy-firestore-rules.mjs",
+    "fix:launch": "node scripts/deploy-firestore-rules.mjs && node scripts/launch-verification.mjs",
+    "seed:demo": "node scripts/seed-demo-data.mjs seed"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.4.1",
@@ -73,6 +79,8 @@
     "eas-cli": "^16.24.1",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~10.0.0",
+    "firebase-tools": "^14.27.0",
+    "google-auth-library": "^10.6.2",
     "typescript": "~5.9.2"
   }
 }

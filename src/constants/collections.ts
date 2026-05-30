@@ -11,4 +11,5 @@ export const firebaseCollections = {
   auditLogs: 'audit_logs',
   reprintRecords: 'reprint_records',
   printerHealth: 'printer_health',
+  appConfig: 'app_config',
 } as const;

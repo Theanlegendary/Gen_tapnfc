@@ -37,6 +37,7 @@ import {
   canTransitionOrderStatus,
   getNextOrderStatus as getNextStatusInFlow,
 } from '@/src/utils/orderStatusFlow';
+import { getDefaultSalesUid } from '@/src/services/defaultSalesService';
 
 const PRINTER_STAGE_FLOW: PrinterJobStage[] = [
   'queued',
@@ -370,6 +371,7 @@ export async function createCustomerOrder(input: CreateCustomerOrderInput): Prom
   const status: OrderStatus = input.fulfillment === 'digital' ? 'ready' : 'new';
 
   const fulfillment = input.fulfillment;
+  const salesUid = await getDefaultSalesUid();
   const orderRef = await addDoc(collection(db, firebaseCollections.orders), withoutUndefined({
     customerName: input.customerName.trim(),
     phone: input.phone.trim(),
@@ -393,7 +395,7 @@ export async function createCustomerOrder(input: CreateCustomerOrderInput): Prom
     notes: input.notes?.trim() || undefined,
     status,
     cardStatus: 'active' as OrderCardStatus,
-    assignedSalesman: uid,
+    assignedSalesman: salesUid,
     createdBy: uid,
     updatedBy: uid,
     createdAt: serverTimestamp(),
