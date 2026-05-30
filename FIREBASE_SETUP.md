@@ -28,7 +28,7 @@ Follow these steps in order. Your app code is already wired for Firebase Auth + 
 2. **APIs & Services → Credentials**.
 3. Create OAuth clients as needed:
    - **Web** — used by Expo Go and `expo-auth-session` (this is `EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID`).
-   - **iOS** — bundle ID `com.biocloud.nativeapp`.
+   - **iOS** — bundle ID `com.sagozen.sitehubman`.
    - **Android** — package `com.biocloud.nativeapp`; add SHA-1 from your EAS/debug keystore.
 
 Add to `.env`:

@@ -14,6 +14,7 @@ import {
   signInWithAppleTokens,
   signInWithGoogleIdToken,
 } from '@/src/services/socialAuthService';
+import { getGoogleOAuthSetupHint } from '@/src/utils/googleAuthConfig';
 import { AppUser } from '@/src/types/models';
 
 interface SocialAuthSectionProps {
@@ -24,7 +25,7 @@ interface SocialAuthSectionProps {
 const SOCIAL_BTN_HEIGHT = 50;
 
 export function SocialAuthSection({ disabled = false, onSuccess }: SocialAuthSectionProps) {
-  const { promptAsync, isConfigured, isReady } = useGoogleSignIn();
+  const { promptAsync, isConfigured, isReady, redirectUri } = useGoogleSignIn();
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [isAppleLoading, setIsAppleLoading] = useState(false);
   const [appleAvailable, setAppleAvailable] = useState(false);
@@ -46,10 +47,7 @@ export function SocialAuthSection({ disabled = false, onSuccess }: SocialAuthSec
   async function handleGooglePress() {
     if (busy) return;
     if (!isConfigured) {
-      Alert.alert(
-        'Google sign-in not configured',
-        'Add EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID (and platform client IDs) to your .env file, then restart Expo.'
-      );
+      Alert.alert('Google sign-in not configured', getGoogleOAuthSetupHint());
       return;
     }
     if (!isReady) {
@@ -62,7 +60,11 @@ export function SocialAuthSection({ disabled = false, onSuccess }: SocialAuthSec
       const result = await promptAsync();
       if (result.type === 'cancel' || result.type === 'dismiss') return;
       if (result.type === 'error') {
-        Alert.alert('Google sign-in failed', result.error?.message ?? 'Unable to open Google sign-in.');
+        const msg = result.error?.message ?? 'Unable to open Google sign-in.';
+        Alert.alert(
+          'Google sign-in failed',
+          `${msg}\n\nIf you see redirect_uri_mismatch, add this redirect URI to your Web OAuth client:\n${redirectUri}`
+        );
         return;
       }
       if (result.type !== 'success') {
@@ -73,7 +75,7 @@ export function SocialAuthSection({ disabled = false, onSuccess }: SocialAuthSec
       if (!idToken) {
         Alert.alert(
           'Google sign-in failed',
-          'No ID token was returned. Check your Google OAuth client IDs in .env.'
+          `No ID token returned. Use the Firebase Web client ID in .env and add redirect URI:\n${redirectUri}`
         );
         return;
       }
@@ -161,7 +163,7 @@ export function SocialAuthSection({ disabled = false, onSuccess }: SocialAuthSec
 
       {!isConfigured ? (
         <AppText variant="caption" tone="muted" style={styles.hint}>
-          Google sign-in requires EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID in .env
+          Add EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID to .env — run npm run google:setup
         </AppText>
       ) : null}
 
