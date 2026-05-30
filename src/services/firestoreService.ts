@@ -14,9 +14,7 @@ import {
   where,
 } from 'firebase/firestore';
 import { firebaseCollections } from '@/src/constants/collections';
-import { GUEST_PUBLIC_BIO_PAGES } from '@/src/constants/guestDemo';
 import { auth, db } from '@/src/services/firebaseClient';
-import { isDemoAccountEmail } from '@/src/utils/demoAccounts';
 import {
   AppNotification,
   BioPage,
@@ -214,10 +212,6 @@ export type UpdateOrderDetailsInput = Partial<Pick<
 >>;
 
 async function assertNoDuplicateOpenOrder(input: CreateOrderInput) {
-  if (isDemoAccountEmail(auth.currentUser?.email)) {
-    return;
-  }
-
   const phone = input.phone?.trim();
   const telegram = input.telegram?.trim();
   const contactConstraint = phone
@@ -1048,19 +1042,12 @@ export async function getBioPage(userId: string): Promise<BioPage | null> {
 export async function getPublicBioPageBySlug(slug: string): Promise<BioPage | null> {
   const normalizedSlug = slug.trim().toLowerCase();
   if (!normalizedSlug) return null;
-  const guestFallback = GUEST_PUBLIC_BIO_PAGES[normalizedSlug] ?? null;
 
-  let snap;
-  try {
-    const pagesQuery = query(collection(db, firebaseCollections.bioPages), where('slug', '==', normalizedSlug));
-    snap = await getDocs(pagesQuery);
-  } catch (error) {
-    if (guestFallback) return guestFallback;
-    throw error;
-  }
+  const pagesQuery = query(collection(db, firebaseCollections.bioPages), where('slug', '==', normalizedSlug));
+  const snap = await getDocs(pagesQuery);
 
   const first = snap.docs[0];
-  if (!first) return guestFallback;
+  if (!first) return null;
 
   const data = first.data();
   return {

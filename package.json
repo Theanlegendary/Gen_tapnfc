@@ -11,7 +11,9 @@
     "lint": "npx expo lint",
     "typecheck": "npx tsc --noEmit",
     "eas:build:preview": "npx eas build --platform all --profile preview",
-    "eas:build:production": "npx eas build --platform all --profile production"
+    "eas:build:production": "npx eas build --platform all --profile production",
+    "eas:build:ios:testflight": "npx eas build --platform ios --profile production",
+    "eas:submit:ios:testflight": "npx eas submit --platform ios --profile production --latest"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.4.1",

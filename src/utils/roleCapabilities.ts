@@ -14,12 +14,12 @@ const capabilities: Record<UserRole, RoleCapability[]> = {
       description: 'Build a card layout, preview your NFC identity, and save a local draft on this device.',
     },
     {
-      title: 'Demo checkout & tracking',
-      description: 'Walk through checkout and follow a sample order timeline — no cloud persistence.',
+      title: 'Checkout & tracking',
+      description: 'Sign in to pay, create real Firebase orders, and track production status.',
     },
     {
       title: 'Explore & scan',
-      description: 'Scan demo QR codes, try NFC tap simulation, browse themes, and view sample analytics.',
+      description: 'Scan real profile QR codes, browse themes, and view your account stats after sign-in.',
     },
     {
       title: 'Staff areas blocked',

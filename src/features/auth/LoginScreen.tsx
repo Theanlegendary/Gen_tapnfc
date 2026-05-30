@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Alert, Pressable, StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { AppIcon } from '@/src/components/AppIcon';
 import { AppText } from '@/src/components/AppText';
 import { SettingsGroup, SettingsRow, SettingsSection } from '@/src/components/SettingsGroup';
-import { theme } from '@/src/constants/theme';
 import {
   AuthFooterLink,
   AuthFormGroup,
@@ -21,17 +20,6 @@ import { AppUser } from '@/src/types/models';
 import { getPostAuthDestination } from '@/src/utils/guestAuthRedirect';
 import { iosPalette } from '@/src/design-system/ios';
 
-const ENABLE_DEMO = process.env.EXPO_PUBLIC_ENABLE_DEMO_ACCOUNTS === 'true';
-
-const DEMO_ACCOUNTS = [
-  { label: 'Sales', email: 'sales@demo.com', password: 'demo1234', color: theme.roles.sales.primary },
-  { label: 'Printer', email: 'printer@demo.com', password: 'demo1234', color: theme.roles.printer.primary },
-  { label: 'Admin', email: 'admin@demo.com', password: 'demo1234', color: theme.roles.admin.accent },
-  { label: 'Sales 2', email: 'sales2@demo.com', password: 'demo1234', color: theme.roles.sales.primary },
-];
-
-let demoIndex = 0;
-
 export function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -47,28 +35,6 @@ export function LoginScreen() {
   }, [isLoading, user]);
 
   const busy = isSubmitting || isGuestLoading || isLoading;
-
-  function fillDemo() {
-    const acc = DEMO_ACCOUNTS[demoIndex % DEMO_ACCOUNTS.length];
-    setEmail(acc.email);
-    setPassword(acc.password);
-    demoIndex = (demoIndex + 1) % DEMO_ACCOUNTS.length;
-  }
-
-  async function signInDemoAccount(acc: (typeof DEMO_ACCOUNTS)[number]) {
-    if (busy) return;
-    setEmail(acc.email);
-    setPassword(acc.password);
-    setIsSubmitting(true);
-    try {
-      const signedInUser = await signIn({ email: acc.email, password: acc.password });
-      router.replace(await getPostAuthDestination(signedInUser));
-    } catch (error) {
-      Alert.alert('Demo sign in failed', getAuthErrorMessage(error));
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
 
   async function handleLogin() {
     const normalizedEmail = email.trim().toLowerCase();
@@ -153,36 +119,9 @@ export function LoginScreen() {
         loading={isGuestLoading}
       />
 
-      {ENABLE_DEMO ? (
-        <View style={styles.demoBlock}>
-          <SettingsSection title="Quick demo" footer="Tap a role to sign in instantly." compact />
-          <SettingsGroup compact style={styles.demoGroup}>
-            {DEMO_ACCOUNTS.map((acc, index) => (
-              <SettingsRow
-                key={acc.email}
-                title={acc.label}
-                subtitle={acc.email}
-                icon="User"
-                iconColor={acc.color}
-                iconBackgroundColor={`${acc.color}18`}
-                onPress={() => signInDemoAccount(acc)}
-                disabled={busy}
-                isLast={index === DEMO_ACCOUNTS.length - 1}
-                compact
-              />
-            ))}
-          </SettingsGroup>
-          <Pressable style={styles.demoCycle} onPress={fillDemo} disabled={busy}>
-            <AppText variant="caption" tone="muted">
-              Cycle credentials into form
-            </AppText>
-          </Pressable>
-        </View>
-      ) : null}
-
       <AuthFooterLink
-        prompt="New here?"
-        action="Create an account"
+        prompt="Don't have an account?"
+        action="Create account"
         onPress={() => router.push('/auth/register')}
         disabled={busy}
       />
@@ -191,19 +130,5 @@ export function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  eyeBtn: {
-    padding: 4,
-    marginLeft: 4,
-  },
-  demoBlock: {
-    gap: 0,
-    marginTop: 4,
-  },
-  demoGroup: {
-    marginHorizontal: 0,
-  },
-  demoCycle: {
-    alignItems: 'center',
-    paddingVertical: 6,
-  },
+  eyeBtn: { padding: 4 },
 });

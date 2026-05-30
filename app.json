@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Bio Cloud Native",
+    "name": "SiteHub Man",
     "slug": "bio-cloud-native",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,11 +10,15 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.biocloud.nativeapp",
+      "bundleIdentifier": "com.sagozen.sitehubman",
       "usesAppleSignIn": true,
       "infoPlist": {
-        "NSCameraUsageDescription": "This app needs camera access to scan QR codes.",
-        "NFCReaderUsageDescription": "This app uses NFC to encode and verify customer NFC cards."
+        "NSCameraUsageDescription": "SiteHub needs camera access to scan QR codes on NFC cards.",
+        "NFCReaderUsageDescription": "SiteHub uses NFC to encode and verify customer NFC cards.",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "entitlements": {
+        "com.apple.developer.nfc.readersession.formats": ["NDEF", "TAG"]
       }
     },
     "android": {
@@ -34,7 +38,7 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Allow Bio Cloud to access your camera to scan card QR codes.",
+          "cameraPermission": "Allow SiteHub to access your camera to scan card QR codes.",
           "microphonePermission": false,
           "recordAudioAndroid": false
         }

@@ -106,7 +106,7 @@ export function GuestPostLoginChoiceScreen() {
         choice === 'ecard'
           ? 'Your digital profile is live. Payment recorded.'
           : `Physical card order ${orderId.slice(0, 8)}… is queued for print after payment clears.`,
-        [{ text: 'OK', onPress: () => router.replace(appRoutes.customerTabs) }]
+        [{ text: 'Track order', onPress: () => router.replace(`${appRoutes.guestTrackOrder}?orderId=${orderId}`) }]
       );
     } catch (err) {
       Alert.alert('Could not complete', getAuthErrorMessage(err));
@@ -137,7 +137,7 @@ export function GuestPostLoginChoiceScreen() {
           <AppText style={styles.hintBody}>
             {step === 'choose'
               ? 'E-card is instant and lower cost. Physical NFC includes print, chip, and shipping.'
-              : 'Pay with ABA, KHQR, ACLEDA, Wing, or cash on delivery. Gateway is demo until you connect a live provider.'}
+              : 'Pay with ABA, KHQR, ACLEDA, Wing, or cash on delivery. Payment is recorded on your Firebase order.'}
           </AppText>
         </GuestHintBanner>
 
@@ -231,7 +231,7 @@ export function GuestPostLoginChoiceScreen() {
             </GuestSurfaceCard>
 
             <AppButton
-              label={submitting ? 'Confirming…' : 'Confirm payment (demo)'}
+              label={submitting ? 'Confirming…' : 'Confirm payment'}
               disabled={!paymentMethod || submitting}
               onPress={() => void handleConfirmPayment()}
             />

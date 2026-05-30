@@ -1,57 +1,114 @@
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { useCallback, useEffect, useState } from 'react';
+import { ActivityIndicator, ScrollView, StyleSheet, View } from 'react-native';
+import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { AppButton } from '@/src/components/AppButton';
+import { AppEmptyState } from '@/src/components/AppState';
 import { AppHeader } from '@/src/components/AppHeader';
 import { MetricCard } from '@/src/components/MetricCard';
 import { AppText } from '@/src/components/AppText';
-import { GUEST_DEMO_ANALYTICS } from '@/src/constants/guestDemo';
 import { iosDesign } from '@/src/design-system/ios';
-import { GuestDemoPill, GuestSurfaceCard, guestUi } from '@/src/features/guest/GuestScreenUi';
+import { GuestSurfaceCard, guestUi } from '@/src/features/guest/GuestScreenUi';
+import { useAuth } from '@/src/hooks/useAuth';
+import { useIsGuest } from '@/src/hooks/useIsGuest';
+import { useRequireAccount } from '@/src/providers/GuestGateProvider';
+import { getCustomerInsights, type CustomerInsights } from '@/src/services/customerInsightsService';
 
 export function GuestAnalyticsScreen() {
-  const maxWeekly = Math.max(...GUEST_DEMO_ANALYTICS.weeklyViews);
+  const { user } = useAuth();
+  const isGuest = useIsGuest();
+  const { requireAccount } = useRequireAccount();
+  const [insights, setInsights] = useState<CustomerInsights | null>(null);
+  const [loading, setLoading] = useState(!isGuest);
+
+  const load = useCallback(async () => {
+    if (isGuest || !user?.id) {
+      setInsights(null);
+      setLoading(false);
+      return;
+    }
+    setLoading(true);
+    try {
+      setInsights(await getCustomerInsights(user.id));
+    } catch {
+      setInsights(null);
+    } finally {
+      setLoading(false);
+    }
+  }, [isGuest, user?.id]);
+
+  useEffect(() => {
+    void load();
+  }, [load]);
+
+  if (isGuest) {
+    return (
+      <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
+        <ScrollView contentContainerStyle={styles.scroll}>
+          <AppHeader title="Analytics" subtitle="Sign in for live stats" showBack />
+          <AppEmptyState
+            iconName="TrendingUp"
+            title="Analytics need an account"
+            description="Profile and order stats come from Firebase after you sign in and publish your card."
+          />
+          <AppButton label="Sign in" onPress={() => requireAccount()} />
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
-        <AppHeader title="Analytics" subtitle="Read-only demo data" showBack />
+        <AppHeader title="Analytics" subtitle="From your Firebase account" showBack />
 
-        <GuestDemoPill label="DEMO PREVIEW" />
-
-        <View style={styles.metricsRow}>
-          <MetricCard label="Profile views" value={String(GUEST_DEMO_ANALYTICS.profileViews)} highlight="Preview" />
-          <MetricCard label="NFC taps" value={String(GUEST_DEMO_ANALYTICS.nfcTaps)} />
-        </View>
-        <View style={styles.metricsRow}>
-          <MetricCard label="QR scans" value={String(GUEST_DEMO_ANALYTICS.qrScans)} />
-          <MetricCard label="Contact saves" value={String(GUEST_DEMO_ANALYTICS.contactSaves)} />
-        </View>
-
-        <GuestSurfaceCard title="Traffic sources">
-          {GUEST_DEMO_ANALYTICS.topSources.map((source) => (
-            <View key={source.label} style={styles.sourceRow}>
-              <AppText style={styles.sourceLabel}>{source.label}</AppText>
-              <AppText style={styles.sourceValue}>{source.value}%</AppText>
+        {loading ? (
+          <ActivityIndicator color={guestUi.accent} />
+        ) : !insights ? (
+          <AppEmptyState
+            iconName="TrendingUp"
+            title="No data yet"
+            description="Create your e-card or place an order to start seeing activity here."
+          />
+        ) : (
+          <>
+            <View style={styles.metricsRow}>
+              <MetricCard label="Total orders" value={String(insights.totalOrders)} highlight="Live" />
+              <MetricCard label="In progress" value={String(insights.activeOrders)} />
             </View>
-          ))}
-        </GuestSurfaceCard>
+            <View style={styles.metricsRow}>
+              <MetricCard label="Delivered" value={String(insights.deliveredOrders)} />
+              <MetricCard
+                label="Public profile"
+                value={insights.bioSlug ? 'Live' : 'None'}
+              />
+            </View>
 
-        <GuestSurfaceCard title="Views this week">
-          <View style={styles.chart}>
-            {GUEST_DEMO_ANALYTICS.weeklyViews.map((value, index) => (
-              <View key={index} style={styles.barCol}>
-                <View
-                  style={[
-                    styles.bar,
-                    {
-                      height: Math.max(12, (value / maxWeekly) * 96),
-                    },
-                  ]}
-                />
-                <AppText style={styles.barLabel}>{['M', 'T', 'W', 'T', 'F', 'S', 'S'][index]}</AppText>
-              </View>
-            ))}
-          </View>
-        </GuestSurfaceCard>
+            <GuestSurfaceCard title="Profile">
+              {insights.bioSlug ? (
+                <>
+                  <AppText style={styles.line}>Slug: /public/{insights.bioSlug}</AppText>
+                  <AppText style={styles.lineMuted}>
+                    {insights.displayName ?? user?.displayName ?? 'Your card'}
+                  </AppText>
+                  <AppButton
+                    label="Open public profile"
+                    variant="outline"
+                    onPress={() => router.push(`/public/${insights.bioSlug}`)}
+                  />
+                </>
+              ) : (
+                <AppText style={styles.lineMuted}>
+                  No published e-card yet. Choose e-card at checkout to create your live profile.
+                </AppText>
+              )}
+            </GuestSurfaceCard>
+
+            <AppText style={styles.note}>
+              Detailed tap and view analytics will appear here when NFC event tracking is enabled in Firebase.
+            </AppText>
+          </>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -65,27 +122,7 @@ const styles = StyleSheet.create({
     paddingBottom: iosDesign.spacing.xxl,
   },
   metricsRow: { flexDirection: 'row', gap: iosDesign.spacing.sm },
-  sourceRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: iosDesign.spacing.xs,
-  },
-  sourceLabel: { fontSize: 15, fontWeight: '600', color: guestUi.text },
-  sourceValue: { fontSize: 15, fontWeight: '800', color: guestUi.accent },
-  chart: {
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'space-between',
-    gap: 4,
-    marginTop: iosDesign.spacing.md,
-    height: 120,
-  },
-  barCol: { flex: 1, alignItems: 'center', justifyContent: 'flex-end', gap: 4 },
-  bar: {
-    width: '100%',
-    maxWidth: 28,
-    borderRadius: guestUi.radiusSm,
-    backgroundColor: guestUi.accent,
-  },
-  barLabel: { fontSize: 10, fontWeight: '600', color: guestUi.muted },
+  line: { fontSize: 14, fontWeight: '700', color: guestUi.text },
+  lineMuted: { fontSize: 13, fontWeight: '500', color: guestUi.muted, lineHeight: 18 },
+  note: { fontSize: 12, fontWeight: '500', color: guestUi.muted, lineHeight: 17 },
 });

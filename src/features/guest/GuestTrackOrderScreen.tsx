@@ -3,21 +3,16 @@ import { ActivityIndicator, ScrollView, StyleSheet, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppButton } from '@/src/components/AppButton';
+import { AppEmptyState } from '@/src/components/AppState';
 import { AppHeader } from '@/src/components/AppHeader';
-import { AppIcon } from '@/src/components/AppIcon';
 import { AppText } from '@/src/components/AppText';
-import { GUEST_DEMO_ORDER, GUEST_DEMO_ORDER_ID } from '@/src/constants/guestDemo';
 import { productTypeOptions } from '@/src/constants/options';
 import { appRoutes } from '@/src/constants/navigation';
 import { iosDesign } from '@/src/design-system/ios';
-import {
-  GuestDemoPill,
-  GuestHintBanner,
-  GuestSurfaceCard,
-  guestUi,
-} from '@/src/features/guest/GuestScreenUi';
+import { GuestHintBanner, GuestSurfaceCard, guestUi } from '@/src/features/guest/GuestScreenUi';
 import { useAuth } from '@/src/hooks/useAuth';
 import { useIsGuest } from '@/src/hooks/useIsGuest';
+import { useRequireAccount } from '@/src/providers/GuestGateProvider';
 import { getOrder } from '@/src/services/firestoreService';
 import { loadGuestLastOrderId } from '@/src/services/guestDraftService';
 import type { Order } from '@/src/types/models';
@@ -26,20 +21,22 @@ import { buildOrderTimeline } from '@/src/utils/orderTrackTimeline';
 export function GuestTrackOrderScreen() {
   const { user } = useAuth();
   const isGuest = useIsGuest();
+  const { requireAccount } = useRequireAccount();
   const params = useLocalSearchParams<{ orderId?: string }>();
   const [order, setOrder] = useState<Order | null>(null);
-  const [loading, setLoading] = useState(!isGuest);
+  const [loading, setLoading] = useState(true);
 
   const loadOrder = useCallback(async () => {
-    if (isGuest) {
+    if (isGuest || !user) {
       setOrder(null);
       setLoading(false);
       return;
     }
     setLoading(true);
-    const orderId = (typeof params.orderId === 'string' ? params.orderId : params.orderId?.[0])
-      ?? (await loadGuestLastOrderId())
-      ?? null;
+    const orderId =
+      (typeof params.orderId === 'string' ? params.orderId : params.orderId?.[0]) ??
+      (await loadGuestLastOrderId()) ??
+      null;
     if (!orderId) {
       setOrder(null);
       setLoading(false);
@@ -53,104 +50,90 @@ export function GuestTrackOrderScreen() {
     } finally {
       setLoading(false);
     }
-  }, [isGuest, params.orderId]);
+  }, [isGuest, user, params.orderId]);
 
   useEffect(() => {
     void loadOrder();
   }, [loadOrder]);
 
-  const demo = GUEST_DEMO_ORDER;
+  if (isGuest) {
+    return (
+      <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
+        <ScrollView contentContainerStyle={styles.scroll}>
+          <AppHeader title="Track order" subtitle="Sign in to view your orders" showBack />
+        <AppEmptyState
+          iconName="Package"
+          title="Orders live in your account"
+          description="Sign in to see real order status from Firebase — design, production, QA, and shipping."
+        />
+        <AppButton
+          label="Sign in to track"
+          onPress={() =>
+            requireAccount(() => router.push(appRoutes.guestTrackOrder), {
+              message: 'Sign in to track your NFC card orders.',
+            })
+          }
+        />
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+
   const productLabel = order
     ? productTypeOptions.find((p) => p.value === order.productType)?.label ?? order.productType
-    : demo.productLabel;
-  const quantity = order?.quantity ?? demo.quantity;
-  const orderIdDisplay = order?.id ?? GUEST_DEMO_ORDER_ID;
-  const timeline = order ? buildOrderTimeline(order) : demo.timeline;
-  const statusLabel = order
-    ? order.status.replace(/_/g, ' ')
-    : 'in production';
-  const isDemo = isGuest || !order;
+    : null;
+  const timeline = order ? buildOrderTimeline(order) : [];
+  const statusLabel = order ? order.status.replace(/_/g, ' ') : '';
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
-        <AppHeader
-          title="Track order"
-          subtitle={isDemo ? 'Demo timeline — read only' : 'Your order status'}
-          showBack
-        />
+        <AppHeader title="Track order" subtitle="Live status from Firebase" showBack />
 
         {loading ? (
           <ActivityIndicator color={guestUi.accent} style={styles.loader} />
+        ) : !order ? (
+          <>
+            <AppEmptyState
+              iconName="Package"
+              title="No orders yet"
+              description="Place an order from Design your card, then return here to follow production and delivery."
+            />
+            <AppButton label="Design your card" onPress={() => router.push(appRoutes.guestDesign)} />
+          </>
         ) : (
-          <GuestSurfaceCard>
-            <View style={styles.orderHeader}>
-              {isDemo ? <GuestDemoPill label="DEMO" /> : <GuestDemoPill label="YOUR ORDER" />}
-              <AppText style={styles.orderId}>{orderIdDisplay}</AppText>
-            </View>
-            <AppText style={styles.orderProduct}>
-              {productLabel} × {quantity}
-            </AppText>
-            <AppText style={styles.orderTotal}>
-              {order ? `Status: ${statusLabel}` : `$${demo.total} · In production`}
-            </AppText>
-            {!isDemo && order ? (
+          <>
+            <GuestSurfaceCard>
+              <AppText style={styles.orderId}>{order.id}</AppText>
+              <AppText style={styles.orderProduct}>
+                {productLabel} × {order.quantity}
+              </AppText>
+              <AppText style={styles.orderTotal}>Status: {statusLabel}</AppText>
               <AppText style={styles.orderEta}>
                 Placed {new Date(order.createdAt).toLocaleDateString(undefined, { dateStyle: 'medium' })}
               </AppText>
-            ) : (
-              <AppText style={styles.orderEta}>Est. delivery {demo.eta}</AppText>
-            )}
-          </GuestSurfaceCard>
-        )}
+            </GuestSurfaceCard>
 
-        <GuestHintBanner>
-          <AppText style={styles.hintBody}>
-            {isDemo
-              ? 'This is sample production status. Sign in and finish your design to track a real order.'
-              : 'Updates appear here as your card moves through design, print, and delivery.'}
-          </AppText>
-        </GuestHintBanner>
+            <GuestHintBanner>
+              <AppText style={styles.hintBody}>
+                Payment: {order.paymentStatus} · {order.currency ?? 'USD'}{' '}
+                {order.amount != null ? order.amount.toLocaleString() : '—'}
+              </AppText>
+            </GuestHintBanner>
 
-        <GuestSurfaceCard title="Timeline">
-          {timeline.map((item, index) => {
-            const isLast = index === timeline.length - 1;
-            const active = 'active' in item && item.active;
-            return (
-              <View key={`${item.step}-${index}`} style={styles.timelineRow}>
-                <View style={styles.timelineIconCol}>
-                  <View
-                    style={[
-                      styles.timelineDot,
-                      item.done && styles.timelineDotDone,
-                      active && styles.timelineDotActive,
-                    ]}
-                  >
-                    {item.done ? <AppIcon name="ShieldCheck" size={12} color="#fff" /> : null}
+            <GuestSurfaceCard title="Timeline">
+              {timeline.map((step) => (
+                <View key={step.step} style={styles.timelineRow}>
+                  <View style={[styles.timelineDot, step.done && styles.timelineDotDone, step.active && styles.timelineDotActive]} />
+                  <View style={styles.timelineCopy}>
+                    <AppText style={styles.timelineStep}>{step.step}</AppText>
+                    <AppText style={styles.timelineAt}>{step.at}</AppText>
                   </View>
-                  {!isLast ? <View style={styles.timelineLine} /> : null}
                 </View>
-                <View style={styles.timelineCopy}>
-                  <AppText style={[styles.timelineStep, active && styles.timelineStepActive]}>{item.step}</AppText>
-                  <AppText style={styles.timelineAt}>{item.at}</AppText>
-                </View>
-              </View>
-            );
-          })}
-        </GuestSurfaceCard>
-
-        <AppButton label="Design another card" variant="outline" onPress={() => router.push(appRoutes.guestDesign)} />
-        {isDemo ? (
-          <AppButton label="Sign in to keep your design" onPress={() => router.push(appRoutes.login)} />
-        ) : order ? (
-          <AppButton
-            label="View order details"
-            variant="outline"
-            onPress={() =>
-              router.push({ pathname: appRoutes.orderDetail, params: { orderId: order.id } })
-            }
-          />
-        ) : null}
+              ))}
+            </GuestSurfaceCard>
+          </>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -163,46 +146,23 @@ const styles = StyleSheet.create({
     gap: iosDesign.spacing.md,
     paddingBottom: iosDesign.spacing.xxl,
   },
-  loader: { marginVertical: iosDesign.spacing.lg },
-  orderHeader: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 4 },
-  orderId: { fontSize: 13, fontWeight: '800', color: guestUi.muted, letterSpacing: 0.5 },
-  orderProduct: { fontSize: 18, fontWeight: '800', color: guestUi.text },
-  orderTotal: { fontSize: 14, fontWeight: '600', color: guestUi.accent, marginTop: 4 },
-  orderEta: { fontSize: 12, fontWeight: '500', color: guestUi.muted, marginTop: 2 },
-  hintBody: { fontSize: 12, fontWeight: '500', color: guestUi.muted, lineHeight: 17 },
-  timelineRow: {
-    flexDirection: 'row',
-    gap: iosDesign.spacing.md,
-    paddingVertical: iosDesign.spacing.sm,
-  },
-  timelineIconCol: { alignItems: 'center', width: 28 },
+  loader: { marginTop: 24 },
+  orderId: { fontSize: 13, fontWeight: '800', color: guestUi.muted, letterSpacing: 0.4 },
+  orderProduct: { fontSize: 17, fontWeight: '800', color: guestUi.text, marginTop: 4 },
+  orderTotal: { fontSize: 14, fontWeight: '700', color: guestUi.accent, marginTop: 6 },
+  orderEta: { fontSize: 12, fontWeight: '500', color: guestUi.muted, marginTop: 4 },
+  hintBody: { fontSize: 12, fontWeight: '500', color: guestUi.muted },
+  timelineRow: { flexDirection: 'row', gap: 12, paddingVertical: 10 },
   timelineDot: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: guestUi.border,
-    backgroundColor: guestUi.surface,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  timelineDotDone: {
-    backgroundColor: guestUi.accent,
-    borderColor: guestUi.accent,
-  },
-  timelineDotActive: {
-    borderColor: guestUi.accent,
-    borderWidth: 3,
-  },
-  timelineLine: {
-    flex: 1,
-    width: 2,
-    minHeight: 24,
-    backgroundColor: guestUi.border,
+    width: 10,
+    height: 10,
+    borderRadius: 5,
     marginTop: 4,
+    backgroundColor: guestUi.border,
   },
-  timelineCopy: { flex: 1, gap: 2, paddingBottom: iosDesign.spacing.sm },
-  timelineStep: { fontSize: 15, fontWeight: '700', color: guestUi.text },
-  timelineStepActive: { color: guestUi.accent },
+  timelineDotDone: { backgroundColor: guestUi.accent },
+  timelineDotActive: { backgroundColor: '#2563EB' },
+  timelineCopy: { flex: 1, gap: 2 },
+  timelineStep: { fontSize: 14, fontWeight: '700', color: guestUi.text },
   timelineAt: { fontSize: 12, fontWeight: '500', color: guestUi.muted },
 });

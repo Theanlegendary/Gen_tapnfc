@@ -1,19 +1,32 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Animated, Easing, Pressable, StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { AppHeader } from '@/src/components/AppHeader';
 import { AppIcon } from '@/src/components/AppIcon';
 import { ScreenContainer } from '@/src/components/ScreenContainer';
 import { AppText } from '@/src/components/AppText';
-import { GUEST_SAMPLE_PROFILE_SLUG } from '@/src/constants/guestDemo';
 import { iosDesign } from '@/src/design-system/ios';
 import { GuestHintBanner, guestUi } from '@/src/features/guest/GuestScreenUi';
+import { useAuth } from '@/src/hooks/useAuth';
+import { useIsGuest } from '@/src/hooks/useIsGuest';
 import { useRequireAccount } from '@/src/providers/GuestGateProvider';
+import { getCustomerInsights } from '@/src/services/customerInsightsService';
 
 export function GuestNfcDemoScreen() {
   const pulse = useRef(new Animated.Value(0)).current;
   const sheen = useRef(new Animated.Value(0)).current;
+  const { user } = useAuth();
+  const isGuest = useIsGuest();
   const { requireAccount } = useRequireAccount();
+  const [bioSlug, setBioSlug] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isGuest || !user?.id) {
+      setBioSlug(null);
+      return;
+    }
+    void getCustomerInsights(user.id).then((insights) => setBioSlug(insights.bioSlug));
+  }, [isGuest, user?.id]);
 
   useEffect(() => {
     const pulseLoop = Animated.loop(
@@ -67,7 +80,13 @@ export function GuestNfcDemoScreen() {
   });
 
   function simulateTap() {
-    router.push(`/public/${GUEST_SAMPLE_PROFILE_SLUG}`);
+    if (bioSlug) {
+      router.push(`/public/${bioSlug}`);
+      return;
+    }
+    requireAccount(undefined, {
+      message: 'Sign in and publish an e-card to open your profile on tap.',
+    });
   }
 
   return (

@@ -5,10 +5,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppButton } from '@/src/components/AppButton';
 import { AppIcon } from '@/src/components/AppIcon';
 import { FloatingNfcCard } from '@/src/components/FloatingNfcCard';
-import { MetricCard } from '@/src/components/MetricCard';
 import { AppText } from '@/src/components/AppText';
 import { appRoutes } from '@/src/constants/navigation';
-import { GUEST_DEMO_ANALYTICS, GUEST_DEMO_ORDER_ID, GUEST_SAMPLE_PROFILE_SLUG } from '@/src/constants/guestDemo';
 import { iosDesign } from '@/src/design-system/ios';
 import {
   GuestHero,
@@ -17,22 +15,59 @@ import {
   guestUi,
 } from '@/src/features/guest/GuestScreenUi';
 import { useAuth } from '@/src/hooks/useAuth';
+import { useIsGuest } from '@/src/hooks/useIsGuest';
 import { useRequireAccount } from '@/src/providers/GuestGateProvider';
+import { getCustomerInsights, type CustomerInsights } from '@/src/services/customerInsightsService';
 import { loadGuestCardDraft } from '@/src/services/guestDraftService';
 
 export function GuestHomeScreen() {
   const { user } = useAuth();
+  const isGuest = useIsGuest();
   const { requireAccount } = useRequireAccount();
   const [hasDraft, setHasDraft] = useState(false);
+  const [insights, setInsights] = useState<CustomerInsights | null>(null);
 
   const refreshDraft = useCallback(async () => {
     const draft = await loadGuestCardDraft();
     setHasDraft(Boolean(draft));
   }, []);
 
+  const refreshInsights = useCallback(async () => {
+    if (isGuest || !user?.id) {
+      setInsights(null);
+      return;
+    }
+    try {
+      setInsights(await getCustomerInsights(user.id));
+    } catch {
+      setInsights(null);
+    }
+  }, [isGuest, user?.id]);
+
   useEffect(() => {
     void refreshDraft();
-  }, [refreshDraft]);
+    void refreshInsights();
+  }, [refreshDraft, refreshInsights]);
+
+  function openPreview() {
+    if (insights?.bioSlug) {
+      router.push(`/public/${insights.bioSlug}`);
+      return;
+    }
+    requireAccount(undefined, {
+      message: 'Sign in and choose e-card to publish your live NFC profile.',
+    });
+  }
+
+  function openCheckout() {
+    if (isGuest) {
+      requireAccount(() => router.push(appRoutes.guestPostLoginChoice), {
+        message: 'Sign in to pay and create your order in Firebase.',
+      });
+      return;
+    }
+    router.push(appRoutes.guestPostLoginChoice);
+  }
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
@@ -40,60 +75,69 @@ export function GuestHomeScreen() {
         <GuestHero
           eyebrow={getGreeting()}
           title={`Welcome, ${firstName(user?.displayName)}`}
-          subtitle="Design your card, preview your NFC identity, and explore the full consumer journey — no account required."
+          subtitle="Design your NFC card, checkout with real orders, and track production — all synced to Firebase."
         />
 
         <FloatingNfcCard
-          name={user?.displayName ?? 'ID.NTITY'}
+          name={user?.displayName ?? 'SiteHub'}
           subtitle="Tap, scan, and share your NFC identity"
         />
 
         {hasDraft ? (
           <GuestHintBanner>
             <AppText style={styles.hintTitle}>Draft on this device</AppText>
-            <AppText style={styles.hintBody}>You have a saved card design. Open Design your card to continue or checkout.</AppText>
+            <AppText style={styles.hintBody}>
+              Your design is saved locally. Sign in to checkout and sync to your Firebase account.
+            </AppText>
           </GuestHintBanner>
         ) : (
           <GuestHintBanner>
             <AppText style={styles.hintBody}>
-              New here? Design your card, pick virtual or physical, then checkout. Track order is demo-only.
+              Start with Design your card — pick virtual or physical, then sign in to pay and track your real order.
             </AppText>
           </GuestHintBanner>
         )}
+
+        {!isGuest && insights ? (
+          <GuestHintBanner>
+            <AppText style={styles.hintTitle}>Your account</AppText>
+            <AppText style={styles.hintBody}>
+              {insights.totalOrders} order(s) · {insights.activeOrders} in progress
+              {insights.bioSlug ? ` · Profile live at /${insights.bioSlug}` : ''}
+            </AppText>
+          </GuestHintBanner>
+        ) : null}
 
         <AppText style={styles.sectionLabel}>Create & order</AppText>
         <View style={styles.quickGrid}>
           <GuestQuickTile
             icon="PenLine"
             title="Design your card"
-            description="Virtual or physical NFC — live preview, details, and apply"
+            description="Virtual or physical — live preview and details"
             onPress={() => router.push(appRoutes.guestDesign)}
             accent={guestUi.charcoal}
           />
           <GuestQuickTile
             icon="Eye"
             title="Preview profile"
-            description="See how your public NFC page looks when tapped"
-            onPress={() => router.push(`/public/${GUEST_SAMPLE_PROFILE_SLUG}`)}
+            description={
+              insights?.bioSlug ? 'Open your live public page' : 'Sign in + e-card to publish'
+            }
+            onPress={openPreview}
             accent="#0EA5E9"
           />
           <GuestQuickTile
             icon="Wallet"
-            title="Demo checkout"
-            description="3-step walkthrough — no payment processed"
-            onPress={() => router.push(appRoutes.guestCheckout)}
+            title="Checkout"
+            description="Pay and create a real Firebase order"
+            onPress={openCheckout}
           />
           <GuestQuickTile
             icon="Package"
             title="Track order"
-            description={`Sample timeline · ${GUEST_DEMO_ORDER_ID}`}
+            description={isGuest ? 'Sign in to view orders' : 'Live status from Firebase'}
             onPress={() => router.push(appRoutes.guestTrackOrder)}
           />
-        </View>
-
-        <View style={styles.metricsRow}>
-          <MetricCard label="Demo views" value={String(GUEST_DEMO_ANALYTICS.profileViews)} highlight="Preview" />
-          <MetricCard label="Demo taps" value={String(GUEST_DEMO_ANALYTICS.nfcTaps)} />
         </View>
 
         <AppText style={styles.sectionLabel}>Explore</AppText>
@@ -101,26 +145,26 @@ export function GuestHomeScreen() {
           <GuestQuickTile
             icon="ScanLine"
             title="Scan QR"
-            description="Camera scanner and demo profile codes"
+            description="Scan a real profile QR code"
             onPress={() => router.push(appRoutes.scan)}
           />
           <GuestQuickTile
             icon="Nfc"
-            title="NFC tap demo"
-            description="Simulated tap → sample public profile"
+            title="NFC"
+            description="Learn how tap-to-open works"
             onPress={() => router.push(appRoutes.nfcDemo)}
             accent="#7c3aed"
           />
           <GuestQuickTile
             icon="Sparkles"
             title="Themes"
-            description="Preview bio page color themes"
+            description="Bio page color themes"
             onPress={() => router.push('/theme-picker')}
           />
           <GuestQuickTile
             icon="TrendingUp"
             title="Analytics"
-            description="Read-only engagement demo"
+            description={isGuest ? 'Sign in for stats' : 'Orders & profile from Firebase'}
             onPress={() => router.push(appRoutes.guestAnalytics)}
           />
         </View>
@@ -131,7 +175,7 @@ export function GuestHomeScreen() {
           </View>
           <View style={styles.ctaCopy}>
             <AppText style={styles.ctaTitle}>Ready for your own NFC identity?</AppText>
-            <AppText style={styles.ctaSub}>Sign up to save designs, place real orders, and activate chips.</AppText>
+            <AppText style={styles.ctaSub}>Sign up to save designs, pay, and track real card orders.</AppText>
           </View>
         </View>
         <AppButton
@@ -176,7 +220,6 @@ const styles = StyleSheet.create({
     marginTop: iosDesign.spacing.xs,
   },
   quickGrid: { gap: iosDesign.spacing.sm },
-  metricsRow: { flexDirection: 'row', gap: iosDesign.spacing.sm },
   ctaBlock: {
     flexDirection: 'row',
     alignItems: 'center',

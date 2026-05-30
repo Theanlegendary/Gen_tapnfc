@@ -8,7 +8,6 @@ import { AppHeader } from '@/src/components/AppHeader';
 import { AppIcon } from '@/src/components/AppIcon';
 import { ScreenContainer } from '@/src/components/ScreenContainer';
 import { AppText } from '@/src/components/AppText';
-import { GUEST_DEMO_QR_CODES } from '@/src/constants/guestDemo';
 import { theme } from '@/src/constants/theme';
 import { useRequireAccount } from '@/src/providers/GuestGateProvider';
 import { parseScanPayloadToSlug } from '@/src/utils/guestScan';
@@ -56,7 +55,7 @@ export function GuestScanScreen() {
         <AppCard style={styles.permissionCard}>
           <AppIcon name="ScanLine" size={32} color={theme.colors.primary} />
           <AppText variant="body" tone="muted">
-            Camera access lets you try the scan experience. No scan history is saved in guest mode.
+            Camera access lets you scan real profile QR codes from Firebase.
           </AppText>
           <AppButton label="Enable Camera" onPress={() => void requestPermission()} />
         </AppCard>
@@ -86,32 +85,11 @@ export function GuestScanScreen() {
               <View style={[styles.corner, styles.cornerBR]} />
             </View>
             <AppText variant="caption" tone="inverse" style={styles.overlayText}>
-              Point at a demo or public profile QR
+              Point at a public profile QR code
             </AppText>
           </View>
         </View>
       )}
-
-      <AppText variant="h2">Demo codes</AppText>
-      <AppText variant="caption" tone="muted">
-        Tap a sample code to open a public profile preview.
-      </AppText>
-      {GUEST_DEMO_QR_CODES.map((demo) => (
-        <Pressable key={demo.id} onPress={() => openSlug(demo.slug)}>
-          <AppCard style={styles.demoRow}>
-            <AppIcon name="QrCode" size={22} color={theme.colors.primary} />
-            <View style={styles.demoCopy}>
-              <AppText variant="body" weight="semibold">
-                {demo.label}
-              </AppText>
-              <AppText variant="caption" tone="muted" numberOfLines={1}>
-                {demo.payload}
-              </AppText>
-            </View>
-            <AppIcon name="ChevronRight" size={18} color={theme.colors.textMuted} />
-          </AppCard>
-        </Pressable>
-      ))}
 
       <AppButton
         label="Generate my QR"
@@ -184,13 +162,4 @@ const styles = StyleSheet.create({
   cornerTR: { top: 0, right: 0, borderLeftWidth: 0, borderBottomWidth: 0, borderTopRightRadius: 14 },
   cornerBL: { bottom: 0, left: 0, borderRightWidth: 0, borderTopWidth: 0, borderBottomLeftRadius: 14 },
   cornerBR: { bottom: 0, right: 0, borderLeftWidth: 0, borderTopWidth: 0, borderBottomRightRadius: 14 },
-  demoRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: theme.spacing.md,
-  },
-  demoCopy: {
-    flex: 1,
-    gap: 2,
-  },
 });

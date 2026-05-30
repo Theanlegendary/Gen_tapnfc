@@ -69,10 +69,6 @@ export function parseEmployeeCsv(text: string): CsvRow[] {
   });
 }
 
-const DEMO_CSV = `customerName,phone,email,company,telegram,productType
-Jane Doe,+85512345678,jane@corp.example,Acme Corp,@jane,wood_card
-John Smith,+85598765432,john@corp.example,Acme Corp,,metal_card`;
-
 export function SalesBulkUpload() {
   const { user } = useAuth();
   const [csvText, setCsvText] = useState('');
@@ -145,20 +141,10 @@ export function SalesBulkUpload() {
       />
       <Pressable
         style={[styles.btn, importing && { opacity: 0.6 }]}
-        disabled={importing}
+        disabled={importing || !csvText.trim()}
         onPress={() => void runImport(parseEmployeeCsv(csvText))}
       >
-        <AppText style={styles.btnText}>{importing ? 'Importing…' : 'Import pasted CSV'}</AppText>
-      </Pressable>
-      <Pressable
-        style={[styles.btnSecondary, importing && { opacity: 0.6 }]}
-        disabled={importing}
-        onPress={() => {
-          setCsvText(DEMO_CSV);
-          void runImport(parseEmployeeCsv(DEMO_CSV));
-        }}
-      >
-        <AppText style={styles.btnSecondaryText}>Load & import sample</AppText>
+        <AppText style={styles.btnText}>{importing ? 'Importing…' : 'Import to Firebase'}</AppText>
       </Pressable>
     </View>
   );

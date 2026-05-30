@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { router } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -5,7 +6,6 @@ import { AppButton } from '@/src/components/AppButton';
 import { AppIcon } from '@/src/components/AppIcon';
 import { AppText } from '@/src/components/AppText';
 import { appRoutes } from '@/src/constants/navigation';
-import { GUEST_SAMPLE_PROFILE_SLUG } from '@/src/constants/guestDemo';
 import { iosDesign } from '@/src/design-system/ios';
 import {
   GuestDemoPill,
@@ -14,18 +14,40 @@ import {
   guestUi,
 } from '@/src/features/guest/GuestScreenUi';
 import { useAuth } from '@/src/hooks/useAuth';
+import { useIsGuest } from '@/src/hooks/useIsGuest';
 import { useRequireAccount } from '@/src/providers/GuestGateProvider';
+import { getCustomerInsights } from '@/src/services/customerInsightsService';
 
 export function GuestProfileScreen() {
   const { user, signOutUser } = useAuth();
+  const isGuest = useIsGuest();
   const { requireAccount } = useRequireAccount();
+  const [bioSlug, setBioSlug] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isGuest || !user?.id) {
+      setBioSlug(null);
+      return;
+    }
+    void getCustomerInsights(user.id).then((insights) => setBioSlug(insights.bioSlug));
+  }, [isGuest, user?.id]);
+
+  function openPreview() {
+    if (bioSlug) {
+      router.push(`/public/${bioSlug}`);
+      return;
+    }
+    requireAccount(undefined, {
+      message: 'Publish an e-card to get your live public profile URL.',
+    });
+  }
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
           <AppText style={styles.title}>Guest Profile</AppText>
-          <GuestDemoPill label="PREVIEW MODE" />
+          <GuestDemoPill label={isGuest ? 'GUEST' : 'ACCOUNT'} />
         </View>
 
         <GuestSurfaceCard>
@@ -50,9 +72,9 @@ export function GuestProfileScreen() {
         />
         <GuestQuickTile
           icon="Eye"
-          title="Preview sample profile"
-          description="Public bio page demo"
-          onPress={() => router.push(`/public/${GUEST_SAMPLE_PROFILE_SLUG}`)}
+          title="Preview profile"
+          description={bioSlug ? 'Your live Firebase profile' : 'Publish e-card to go live'}
+          onPress={openPreview}
           accent="#0EA5E9"
         />
 

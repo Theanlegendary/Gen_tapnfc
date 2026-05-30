@@ -43,6 +43,7 @@ import {
 } from '@/src/features/guest/GuestChooseCardPreview';
 import { useAuth } from '@/src/hooks/useAuth';
 import { useIsGuest } from '@/src/hooks/useIsGuest';
+import { useRequireAccount } from '@/src/providers/GuestGateProvider';
 import type { ProductType } from '@/src/constants/options';
 import type { CardDesign } from '@/src/types/models';
 import {
@@ -135,6 +136,7 @@ export function GuestDesignScreen() {
   const insets = useSafeAreaInsets();
   const { user } = useAuth();
   const isGuest = useIsGuest();
+  const { requireAccount } = useRequireAccount();
 
   const [segment, setSegment] = useState<CardSegment>('virtual');
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -351,7 +353,13 @@ export function GuestDesignScreen() {
       phone: phone.trim(),
       currency: 'KHR',
     });
-    router.push(isGuest ? appRoutes.guestCheckout : appRoutes.guestPostLoginChoice);
+    if (isGuest) {
+      requireAccount(() => router.push(appRoutes.guestPostLoginChoice), {
+        message: 'Sign in to pay and create your order in Firebase.',
+      });
+      return;
+    }
+    router.push(appRoutes.guestPostLoginChoice);
   }
 
   const draftCaption =
